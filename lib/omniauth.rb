@@ -19,7 +19,7 @@ module OmniAuth
   autoload :Form,     'omniauth/form'
   autoload :AuthHash, 'omniauth/auth_hash'
   autoload :FailureEndpoint, 'omniauth/failure_endpoint'
-  autoload :AuthenticityTokenProtection, 'omniauth/authenticity_token_protection'
+  #autoload :AuthenticityTokenProtection, 'omniauth/authenticity_token_protection'
 
   def self.strategies
     @strategies ||= []
@@ -40,7 +40,7 @@ module OmniAuth
         :path_prefix => '/auth',
         :on_failure => OmniAuth::FailureEndpoint,
         :failure_raise_out_environments => ['development'],
-        :request_validation_phase => OmniAuth::AuthenticityTokenProtection,
+        :request_validation_phase => nil,
         :before_request_phase   => nil,
         :before_callback_phase  => nil,
         :before_options_phase   => nil,
